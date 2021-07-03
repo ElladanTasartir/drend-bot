@@ -27,7 +27,7 @@ const messageHandler = (target, context, msg, self) => {
 
     for (let word of arrayOfWords) {
       const loweredWord = word.toLowerCase();
-      if (blackListedWords.includes(loweredWord) || isAlreadySaved(loweredWord)) continue;
+      if (blackListedWords.includes(loweredWord) || isAlreadySaved(word)) continue;
 
       db.push(word);
     }

@@ -29,7 +29,7 @@ const messageHandler = (target, context, msg, self) => {
       const loweredWord = word.toLowerCase();
       if (blackListedWords.includes(loweredWord) || isAlreadySaved(loweredWord)) continue;
 
-      db.push(loweredWord);
+      db.push(word);
     }
 
     console.log(`${context['display-name']} says: ${msg}`);

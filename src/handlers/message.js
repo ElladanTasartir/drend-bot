@@ -26,7 +26,7 @@ const messageHandler = (target, context, msg, self) => {
     const arrayOfWords = msg.split(' ');
 
     for (let word of arrayOfWords) {
-      if (blackListedWords.includes(word) || isAlreadySaved(word)) continue;
+      if (blackListedWords.includes(word.toLowerCase()) || isAlreadySaved(word)) continue;
 
       db.push(word);
     }

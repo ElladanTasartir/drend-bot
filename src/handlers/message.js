@@ -26,9 +26,10 @@ const messageHandler = (target, context, msg, self) => {
     const arrayOfWords = msg.split(' ');
 
     for (let word of arrayOfWords) {
-      if (blackListedWords.includes(word.toLowerCase()) || isAlreadySaved(word)) continue;
+      const loweredWord = word.toLowerCase();
+      if (blackListedWords.includes(loweredWord) || isAlreadySaved(loweredWord)) continue;
 
-      db.push(word);
+      db.push(loweredWord);
     }
 
     console.log(`${context['display-name']} says: ${msg}`);
